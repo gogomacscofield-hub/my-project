@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fdm-slicer"
+version = "0.1.0"
+description = "A small experimental FDM slicer that turns meshes into smoother G-code."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy",
+  "shapely>=2.0",
+  "trimesh",
+]
+
+[project.scripts]
+fdm-slicer = "fdm_slicer.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
